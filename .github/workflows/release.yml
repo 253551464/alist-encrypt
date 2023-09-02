@@ -3,6 +3,8 @@ name: release
 on:
   release:
     types: [ published ]
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -31,4 +33,3 @@ jobs:
             node-proxy/build/*.zip
             node-proxy/build/sha256.txt
           prerelease: false
-          token: ${{ secrets.REPO_TOKEN }}
